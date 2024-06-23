@@ -8,7 +8,7 @@ const guessEle = document.querySelector('.guess');
 const scoreEle = document.querySelector('.score');
 const highscoreEle = document.querySelector('.highscore');
 
-document.querySelector('.check').addEventListener('click', e => {
+const check = e => {
   if (!withinTheRound) return;
   const guess = Number(guessEle.value);
   if (!guess) message.textContent = 'No number!';
@@ -24,4 +24,14 @@ document.querySelector('.check').addEventListener('click', e => {
         scoreEle.textContent = Number(scoreEle.textContent) - 1;
     }
   }
-});
+};
+
+const reset = e => {
+  withinTheRound = true;
+  guessEle.value = '';
+  message.textContent = 'Start guessing...';
+  scoreEle.textContent = '20';
+};
+
+document.querySelector('.check').addEventListener('click', check);
+document.querySelector('.again').addEventListener('click', reset);
