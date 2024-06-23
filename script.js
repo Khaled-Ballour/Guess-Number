@@ -1,6 +1,6 @@
 'use strict';
 
-const number = 20;
+const number = Math.trunc(Math.random() * 20) + 1;
 
 const message = document.querySelector('.message');
 const guessEle = document.querySelector('.guess');
