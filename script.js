@@ -3,8 +3,9 @@
 const number = 20;
 
 const message = document.querySelector('.message');
+const guessEle = document.querySelector('.guess');
 document.querySelector('.check').addEventListener('click', e => {
-  const guess = Number(document.querySelector('.guess').value);
+  const guess = Number(guessEle.value);
   if (!guess) message.textContent = 'No number!';
   else
     message.textContent =
